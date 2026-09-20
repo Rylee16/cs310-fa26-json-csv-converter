@@ -39,7 +39,7 @@ public class Converter {
             //Read the first row as the headings
             String[] headings = reader.readNext();
             
-            //Lists to stroe the data
+            //Lists to store the data
             List<String> prodNums = new ArrayList<>();
             List<String> colHeadings = new ArrayList<>();
             List<List<Object>> data = new ArrayList<>();
@@ -56,10 +56,10 @@ public class Converter {
                 //First column is production number
                 prodNums.add(row[0]);
                 
-                //Create a list for episode data
+                //Create a list for the episode data
                 List<Object> episode = new ArrayList<>();
                 
-                //Skip production zero and Convert seasons and episode into ints
+                //Skip production zero and convert seasons and episode into integers
                 for(int i = 1; i < row.length; i++){
                     if(i == 2 || i == 3){
                         episode.add(Integer.parseInt(row[i]));
@@ -107,7 +107,7 @@ public class Converter {
             List<String> colHeadings = (List<String>) json.get("ColHeadings");
             List<List<Object>> data = (List<List<Object>>) json.get("Data");
             
-            //Create a list to hold all CSV rows
+            //Create a list to hold all the CSV rows
             List<String[]> csvData = new ArrayList<>();
             
             //Create the header row
